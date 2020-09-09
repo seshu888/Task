@@ -147,9 +147,32 @@ class Home extends Component {
 										</div>
 									</React.Fragment>
 								) : (
-									<Paper style={{ padding: '20px', margin: '20px' }}>
+									<div style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column' }}>
 										<p>No Activities Today</p>
-									</Paper>
+										<button
+										style={{
+											padding: '10px',
+											display: 'flex',
+											justifyContent: 'center',
+											alignItems: 'center'
+										}}
+										onClick={this.handleShowAll}
+									>
+										Get All Activities
+									</button>
+									{openShowAll && (
+										<div style={{width:'500px',marginTop:'20px'}}>
+											<Calendar
+												isMultiple={true}
+												reset={false}
+												selected={
+													selectedUser.selectedDays ? selectedUser.selectedDays : null
+												}
+												onChange={this.handleCalenderClick}
+											/>
+										</div>
+									)}
+									</div>
 								)}
 							</div>
 						)}
