@@ -13,7 +13,6 @@ class Home extends Component {
 			viewUsers: false,
 			openModal: false,
 			selectedUser: null,
-			date: null,
 			openShowAll: false
 		};
 	}
@@ -45,9 +44,6 @@ class Home extends Component {
 	};
 	handleClose = () => {
 		this.setState({ openModal: false, selectedUser: null });
-	};
-	onChange = (date) => {
-		this.setState({ date: date });
 	};
 	handleShowAll = () => {
 		let { selectedUser } = this.state;
